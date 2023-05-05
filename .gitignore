@@ -16,6 +16,12 @@
 # Mono auto generated files
 mono_crash.*
 
+# App Core
+src/app/core
+
+# Engine Sources
+src/engine
+
 # Build results
 [Bb]uild/
 [Dd]ebug/
