@@ -25,6 +25,20 @@
 // Include STL iostream
 #include <iostream>
 
+#ifdef HEX_LOGGING // DEBUG
+
+// Include hex::core::cfg::debug
+#ifndef HEX_CORE_CFG_DEBUG_HPP
+    #include <hex/core/cfg/hex_debug.hpp>
+#endif /// !HEX_CORE_CFG_DEBUG_HPP
+
+// Include hex::core::Log
+#ifndef HEX_CORE_LOG_HPP
+#include <hex/core/metrics/Log.hpp>
+#endif /// !HEX_CORE_LOG_HPP
+
+#endif // DEBUG
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // ALIASES
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
