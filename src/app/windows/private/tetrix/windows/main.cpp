@@ -25,12 +25,20 @@
 
 void Start()
 {
+#if HEX_LOGGING // LOGGING
+    hex::win::WinConsoleLogger::Initialize();
+#endif // LOGGING
+
     tetrixGame::Initialize();
 }
 
 void Stop()
 {
     tetrixGame::Terminate();
+
+#if HEX_LOGGING // LOGGING
+    hexLog::Terminate();
+#endif // LOGGING
 }
 
 int main()

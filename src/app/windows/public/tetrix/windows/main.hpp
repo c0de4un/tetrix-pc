@@ -34,8 +34,13 @@
 
 // Include hex::core::Log
 #ifndef HEX_CORE_LOG_HPP
-#include <hex/core/metrics/Log.hpp>
+    #include <hex/core/metrics/Log.hpp>
 #endif /// !HEX_CORE_LOG_HPP
+
+// Include hex::win::WinConsoleLogger
+#ifndef HEX_WIN_CONSOLE_LOGGER_HPP
+    #include <hex/windows/metrics/WinConsoleLogger.hpp>
+#endif /// !HEX_WIN_CONSOLE_LOGGER_HPP
 
 #endif // DEBUG
 

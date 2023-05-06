@@ -30,10 +30,17 @@ target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/app/wind
 # Link with App.Core
 target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/app/core/public" )
 
+# Link with hexEngine.lib
+target_link_libraries( app PUBLIC hex )
+
 # Link with hexEngine.Core
 target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/core/public" )
 
 # Link with hexEngine.Windows
+if ( NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/${PLATFORM}/module.cmake" )
+    message( FATAL_ERROR "${PROJECT_NAME} - hexEngine.windows module not found at: ${CMAKE_CURRENT_SOURCE_DIR}/src/engine/${PLATFORM}" )
+endif ( NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/${PLATFORM}/module.cmake" )
+
 target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/${PLATFORM}/public" )
 
 # Link with hexEngine.GL
