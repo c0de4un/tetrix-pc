@@ -16,7 +16,7 @@
 
 // HEADER
 #ifndef APP_MAIN_HPP
-    #include "../public/main.hpp"
+    #include <tetrix/windows/main.hpp>
 #endif /// !APP_MAIN_HPP
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -1,30 +1,24 @@
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# CONSTANTS
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-include( "cmake/constants.cmake" )
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # CMAKE
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # CMake Version
-cmake_minimum_required( VERSION ${HEX_CMAKE_VERSION} )
+cmake_minimum_required( VERSION 3.22.1 )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # PROJECT
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-project( ${APP_PROJECT_NAME} VERSION ${APP_CORE_VERSION} LANGUAGES C CXX )
+project( "TetriX.Core" VERSION ${APP_VERSION} LANGUAGES C CXX )
 
 # Enable Position Independent Code
 set( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON )
 set( CMAKE_POSITION_INDEPENDENT_CODE ON )
 
 # C++ Version
-set ( CMAKE_CXX_STANDARD ${HEX_CXX_VERSION} )
+set ( CMAKE_CXX_STANDARD ${CXX_VERSION} )
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -35,8 +29,7 @@ set(CMAKE_AUTORCC ON)
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 set( APP_SRC_DIR "${CMAKE_SOURCE_DIR}/src/app" )
-set( APP_WIN_INCLUDE_DIR "${APP_SRC_DIR}/windows/public" )
-set( APP_WIN_PUBLIC_DIR "${APP_SRC_DIR}/windows/public/tetrix/windows/" )
+set( APP_WIN_PUBLIC_DIR "${APP_SRC_DIR}/windows/public/" )
 set( APP_HEADERS
     "${APP_WIN_PUBLIC_DIR}main.hpp"
 )
@@ -45,7 +38,7 @@ set( APP_HEADERS
 # SOURCES
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-set( APP_WIN_PRIVATE_DIR "${APP_SRC_DIR}/windows/private/tetrix/windows/" )
+set( APP_WIN_PRIVATE_DIR "${APP_SRC_DIR}/windows/private/" )
 set( APP_SOURCES
     "${APP_WIN_PRIVATE_DIR}main.cpp"
 )
@@ -56,8 +49,5 @@ set( APP_SOURCES
 
 # Create Executable-Object
 add_executable( app ${APP_HEADERS} ${APP_SOURCES} )
-
-# Link with App.Windows Headers
-target_include_directories( app PUBLIC ${APP_WIN_INCLUDE_DIR} )
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
