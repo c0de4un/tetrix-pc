@@ -66,7 +66,7 @@ set( HEX_EXPORT_SOURCES "" )
 set( HEX_MODULES_LIST
     "${PLATFORM}"
 )
-add_subdirectory( "${CMAKE_SOURCE_DIR}/src/engine/core" )
+add_subdirectory( "${CMAKE_SOURCE_DIR}/src/engine" )
 
 # App.Core
 include( "${APP_SRC_DIR}/core/module.cmake" )

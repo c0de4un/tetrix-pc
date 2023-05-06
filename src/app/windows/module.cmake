@@ -31,10 +31,10 @@ target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/app/wind
 target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/app/core/public" )
 
 # Link with hexEngine.Core
-target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/core/src/public" )
+target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/core/public" )
 
 # Link with hexEngine.Windows
-target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/${PLATFORM}/src/public" )
+target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/${PLATFORM}/public" )
 
 # Link with hexEngine.GL
 
