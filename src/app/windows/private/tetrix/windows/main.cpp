@@ -23,6 +23,16 @@
 // MAIN
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+void Start()
+{
+    tetrixGame::Initialize();
+}
+
+void Stop()
+{
+    tetrixGame::Terminate();
+}
+
 int main()
 {
     std::cout << "Hello World !\n\nPress any key to exit . . .\n";

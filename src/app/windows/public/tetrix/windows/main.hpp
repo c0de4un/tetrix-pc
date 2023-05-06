@@ -17,6 +17,11 @@
 // INCLUDES
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+// Include tetrix::core::TetrixGame
+#ifndef TETRIX_CORE_GAME_HPP
+    #include <tetrix/core/game/TetrixGame.hpp>
+#endif /// !TETRIX_CORE_GAME_HPP
+
 // Include STL iostream
 #include <iostream>
 
