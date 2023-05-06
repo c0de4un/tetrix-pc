@@ -24,7 +24,7 @@
 // ALIASES
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-const constexpr const int APP_OK = 0;
+static constexpr const int APP_OK = 0;
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
