@@ -14,6 +14,13 @@ include( "cmake/constants.cmake" )
 cmake_minimum_required( VERSION ${HEX_CMAKE_VERSION} )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# CONFIGS
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+include( "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/core/cmake/platform.cmake" )
+include( "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/core/cmake/build_types.cmake" )
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # PROJECT
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -34,7 +41,6 @@ set(CMAKE_AUTORCC ON)
 # HEADERS
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-set( APP_SRC_DIR "${CMAKE_SOURCE_DIR}/src/app" )
 set( APP_WIN_INCLUDE_DIR "${APP_SRC_DIR}/windows/public" )
 set( APP_WIN_PUBLIC_DIR "${APP_SRC_DIR}/windows/public/tetrix/windows/" )
 set( APP_HEADERS
@@ -51,13 +57,21 @@ set( APP_SOURCES
 )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# BUILD
+# MODULES
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Create Executable-Object
-add_executable( app ${APP_HEADERS} ${APP_SOURCES} )
+# hexEngine
+set( HEX_EXPORT_HEADERS "" )
+set( HEX_EXPORT_SOURCES "" )
+set( HEX_MODULES_LIST
+    "${PLATFORM}"
+)
+add_subdirectory( "${CMAKE_SOURCE_DIR}/src/engine/core" )
 
-# Link with App.Windows Headers
-target_include_directories( app PUBLIC ${APP_WIN_INCLUDE_DIR} )
+# App.Core
+include( "${APP_SRC_DIR}/core/module.cmake" )
+
+# App.Platform
+include( "${APP_SRC_DIR}/${PLATFORM}/module.cmake" )
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
