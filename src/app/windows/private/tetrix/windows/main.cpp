@@ -8,24 +8,27 @@
  * SOFTWARE.
 **/
 
-#ifndef APP_MAIN_HPP
-#define APP_MAIN_HPP
-
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // INCLUDES
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// Include STL iostream
-#include <iostream>
+// HEADER
+#ifndef APP_MAIN_HPP
+    #include <tetrix/windows/main.hpp>
+#endif /// !APP_MAIN_HPP
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// ALIASES
+// MAIN
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-const constexpr const int APP_OK = 0;
+int main()
+{
+    std::cout << "Hello World !\n\nPress any key to exit . . .\n";
+    std::cin.get();
+
+    return APP_OK;
+}
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
-#endif /// !APP_MAIN_HPP

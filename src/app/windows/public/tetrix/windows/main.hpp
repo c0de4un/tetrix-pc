@@ -8,27 +8,24 @@
  * SOFTWARE.
 **/
 
+#ifndef APP_MAIN_HPP
+#define APP_MAIN_HPP
+
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // INCLUDES
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// HEADER
-#ifndef APP_MAIN_HPP
-    #include "../public/main.hpp"
-#endif /// !APP_MAIN_HPP
+// Include STL iostream
+#include <iostream>
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// MAIN
+// ALIASES
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-int main()
-{
-    std::cout << "Hello World !\n\nPress any key to exit . . .\n";
-    std::cin.get();
-
-    return APP_OK;
-}
+static constexpr const int APP_OK = 0;
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+#endif /// !APP_MAIN_HPP
