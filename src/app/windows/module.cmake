@@ -25,6 +25,8 @@ set( APP_SOURCES
 
 # Add Executable-Object
 add_executable( app ${APP_HEADERS} ${APP_SOURCES} )
+set( BUILD_TARGET app )
+
 target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/app/windows/public" )
 
 # Flags for Clang
@@ -49,8 +51,5 @@ target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/$
 # Link with hexEngine.GL
 
 # Link with hexEngine.Net
-
-# Link with GLM
-target_include_directories( app PRIVATE "${GLM_INCLUDE_DIR}" )
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =

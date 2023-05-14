@@ -57,10 +57,10 @@ set( APP_SOURCES
 )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# LIBRARIES
+# FIND LIBRARIES
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-include( "cmake/${PLATFORM}_libs.cmake" )
+include( "cmake/find_${PLATFORM}_libs.cmake" )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # MODULES
@@ -80,5 +80,11 @@ include( "${APP_SRC_DIR}/core/module.cmake" )
 
 # App.Platform
 include( "${APP_SRC_DIR}/${PLATFORM}/module.cmake" )
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# LINK LIBRARIES
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+include( "cmake/link_${PLATFORM}_libs.cmake" )
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
