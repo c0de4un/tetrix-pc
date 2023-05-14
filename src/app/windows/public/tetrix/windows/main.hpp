@@ -25,17 +25,39 @@
 // Include STL iostream
 #include <iostream>
 
+// Include hex::core::mutex
+#ifndef HEX_CORE_CFG_MUTEX_HPP
+    #include <hex/core/cfg/hex_mutex.hpp>
+#endif /// !HEX_CORE_CFG_MUTEX_HPP
+
+// Include hex::ecs
+#ifndef HEX_ECS_HPP
+    #include <hex/core/ecs/ECS.hpp>
+#endif /// !HEX_ECS_HPP
+
+#include <hex/core/collections/IDStorage.hpp>
+
+// Include hex::core::SharedPointer
+#ifndef HEX_CORE_SHARED_POINTER_HPP
+    #include <hex/core/memory/SharedPointer.hpp>
+#endif /// !HEX_CORE_SHARED_POINTER_HPP
+
+// Include hex::core::MemoryManager
+#ifndef HEX_CORE_MEMORY_MANAGER_HPP
+    #include <hex/core/memory/MemoryManager.hpp>
+#endif /// !HEX_CORE_MEMORY_MANAGER_HPP
+
+// Include hex::win::WinGraphics
+#ifndef HEX_WIN_GRAPHICS_HPP
+    #include <hex/windows/graphics/WinGraphics.hpp>
+#endif /// !HEX_WIN_GRAPHICS_HPP
+
 #ifdef HEX_LOGGING // DEBUG
 
 // Include hex::core::cfg::debug
 #ifndef HEX_CORE_CFG_DEBUG_HPP
     #include <hex/core/cfg/hex_debug.hpp>
 #endif /// !HEX_CORE_CFG_DEBUG_HPP
-
-// Include hex::core::Log
-#ifndef HEX_CORE_LOG_HPP
-    #include <hex/core/metrics/Log.hpp>
-#endif /// !HEX_CORE_LOG_HPP
 
 // Include hex::win::WinConsoleLogger
 #ifndef HEX_WIN_CONSOLE_LOGGER_HPP

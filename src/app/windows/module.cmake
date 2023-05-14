@@ -35,8 +35,8 @@ target_compile_options( app PUBLIC -fexceptions )
 # Link with App.Core
 target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/app/core/public" )
 
-# Link with hexEngine.lib
-target_link_libraries( app PUBLIC hex )
+#target_link_libraries( app PUBLIC hex )
+target_link_libraries ( ${BUILD_TARGET} glfw )
 
 # Link with hexEngine.Core
 target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/core/public" )

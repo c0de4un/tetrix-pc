@@ -25,26 +25,93 @@
 
 void Start()
 {
-#if HEX_LOGGING // LOGGING
+#ifdef HEX_LOGGING // LOG
     hex::win::WinConsoleLogger::Initialize();
-#endif // LOGGING
 
-    tetrixGame::Initialize();
+    hexLog::Info("main::Start");
+#endif // LOG
+
+    // Guarded-Block
+    try
+    {
+
+        hexECS::Initialize();
+
+        hexMemory::Initialize();
+
+        hexWinGraphics::Initialize();
+
+        tetrixGame::Initialize();
+
+    }
+#ifdef HEX_LOGGING // LOG
+    catch (const std::exception& _exception)
+    {
+        std::string logMsg("main::Start: ");
+        logMsg += _exception.what();
+        hexLog::Error(logMsg.c_str());
+    }
+#endif // LOG
+    catch (...)
+    {
+#ifdef HEX_LOGGING // LOG
+        std::string logMsg("main::Start: unknown error");
+        hexLog::Error(logMsg.c_str());
+#endif // LOG
+
+        // void
+    }
+
 }
 
 void Stop()
 {
-    tetrixGame::Terminate();
+#ifdef HEX_LOGGING // LOG
+    hexLog::Info("main::Stop");
+#endif // LOG
 
-#if HEX_LOGGING // LOGGING
+    // Guarded-Block
+    try
+    {
+
+        hexApp::Terminate();
+
+        hexGraphics::Terminate();
+
+        hexECS::Terminate();
+
+        hexMemory::Terminate();
+
+    }
+#ifdef HEX_LOGGING // LOG
+    catch (const std::exception& _exception)
+    {
+        std::string logMsg("main::Stop: ");
+        logMsg += _exception.what();
+        hexLog::Error(logMsg.c_str());
+    }
+#endif // LOG
+    catch (...)
+    {
+#ifdef HEX_LOGGING // LOG
+        std::string logMsg("main::Stop: unknown error");
+        hexLog::Error(logMsg.c_str());
+#endif // LOG
+
+        // void
+    }
+
+#if HEX_LOGGING // LOG
     hexLog::Terminate();
-#endif // LOGGING
+#endif // LOG
+
 }
 
 int main()
 {
-    std::cout << "Hello World !\n\nPress any key to exit . . .\n";
-    std::cin.get();
+    Start();
+
+    Stop();
 
     return APP_OK;
 }

@@ -65,21 +65,9 @@ if ( NOT GLFW3_FOUND )
     set_target_properties( glfw PROPERTIES
     IMPORTED_LOCATION "${GLFW3_LOCATION}" )
 
-    # Link GLFW3
-    target_link_libraries ( ${BUILD_TARGET} glfw )
-
-    # Include GLFW3 Headers
-    target_include_directories ( ${BUILD_TARGET} PRIVATE ${GLFW_INCLUDE_DIR} )
-
     message ( STATUS "${PROJECT_NAME} - GLFW3 added as STATIC library from ${GLFW3_LOCATION}" )
 else ( NOT GLFW3_FOUND )
     message ( STATUS "${PROJECT_NAME} - package GLFW3 found")
-
-    # Link GLFW3
-    target_link_libraries ( ${BUILD_TARGET} ${GLFW3_LIBRARIES} )
-
-    # Include GLFW3 Headers
-    target_include_directories ( ${BUILD_TARGET} PRIVATE ${GLFW_INCLUDE_DIR} )
 
     message ( STATUS "${PROJECT_NAME} - GLFW3 added as STATIC library using package" )
 endif ( NOT GLFW3_FOUND )
