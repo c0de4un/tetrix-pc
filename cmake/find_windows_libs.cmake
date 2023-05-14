@@ -32,6 +32,9 @@ endif ( opengl )
 
 set( GLAD_DIR "${LIBS_DIR}glad" )
 set( GLAD_INCLUDE_DIR "${GLAD_DIR}/include" )
+if ( NOT EXISTS "${GLAD_INCLUDE_DIR}/glad/gl.h" )
+    message( FATAL_ERROR "${PROJECT_NAME} - GLAD not found at: ${GLAD_INCLUDE_DIR}" )
+endif ( NOT EXISTS "${GLAD_INCLUDE_DIR}/glad/gl.h" )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # GLFW

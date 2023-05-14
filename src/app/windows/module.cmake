@@ -49,6 +49,7 @@ endif ( NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/${PLATFORM}/module.cm
 target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/${PLATFORM}/public" )
 
 # Link with hexEngine.GL
+target_include_directories( app PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/gl/public" )
 
 # Link with hexEngine.Net
 
