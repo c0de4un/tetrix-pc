@@ -22,6 +22,7 @@ set( APP_CORE_VERSION 0.1.0 )
 
 set( HEX_SRC_ROOT_DIR "${CMAKE_SOURCE_DIR}/src/engine" )
 set( APP_SRC_DIR "${CMAKE_SOURCE_DIR}/src/app" )
+set( LIBS_DIR "${CMAKE_SOURCE_DIR}/libs/" )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # INHERIT

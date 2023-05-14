@@ -57,6 +57,12 @@ set( APP_SOURCES
 )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# LIBRARIES
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+include( "cmake/${PLATFORM}_libs.cmake" )
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # MODULES
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -65,6 +71,7 @@ set( HEX_EXPORT_HEADERS "" )
 set( HEX_EXPORT_SOURCES "" )
 set( HEX_MODULES_LIST
     "${PLATFORM}"
+    "gl"
 )
 add_subdirectory( "${CMAKE_SOURCE_DIR}/src/engine" )
 
