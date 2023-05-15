@@ -17,8 +17,10 @@ cmake_minimum_required( VERSION ${HEX_CMAKE_VERSION} )
 # CONFIGS
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+set( HEX_MEMORY_DEBUG ON ) # Temporary enable memory-management debugging
 include( "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/core/cmake/platform.cmake" )
 include( "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/core/cmake/build_types.cmake" )
+include( "${CMAKE_CURRENT_SOURCE_DIR}/src/engine/gl/config.cmake" )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # PROJECT

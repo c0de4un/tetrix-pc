@@ -41,8 +41,25 @@ void Start()
 
         hexWinGraphics::Initialize();
 
+        hexGLRenderer::Initialize();
+
         tetrixGame::Initialize();
 
+        auto game(hexApp::getInstance());
+        tetrixGame* const tetrix( static_cast<tetrixGame*>(game.get()) );
+
+        if (!tetrix->Start())
+        {
+#ifdef HEX_LOGGING // LOG
+            hexLog::Error("main::Start: failed to start game");
+#endif // LOG
+
+            return;
+        }
+
+        auto graphics(hexGraphics::getInstance());
+        hexWinGraphics* const winGraphics(static_cast<hexWinGraphics*>(graphics.get()));
+        winGraphics->Loop();
     }
 #ifdef HEX_LOGGING // LOG
     catch (const std::exception& _exception)
@@ -75,6 +92,8 @@ void Stop()
     {
 
         hexApp::Terminate();
+
+        hexRenderer::Terminate();
 
         hexGraphics::Terminate();
 

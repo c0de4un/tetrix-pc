@@ -52,6 +52,11 @@
     #include <hex/windows/graphics/WinGraphics.hpp>
 #endif /// !HEX_WIN_GRAPHICS_HPP
 
+// Include hex::gl::GLRenderer
+#ifndef HEX_GL_RENDERER_HPP
+    #include <hex/gl/render/GLRenderer.hpp>
+#endif /// !HEX_GL_RENDERER_HPP
+
 #ifdef HEX_LOGGING // DEBUG
 
 // Include hex::core::cfg::debug
