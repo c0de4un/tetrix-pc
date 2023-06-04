@@ -34,10 +34,9 @@ void Start()
     // Guarded-Block
     try
     {
+        hexMemory::Initialize();
 
         hexECS::Initialize();
-
-        hexMemory::Initialize();
 
         hexWinGraphics::Initialize();
 

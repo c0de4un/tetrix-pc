@@ -57,17 +57,22 @@
     #include <hex/gl/render/GLRenderer.hpp>
 #endif /// !HEX_GL_RENDERER_HPP
 
+// Include hex::core::GameObject
+#ifndef HEX_CORE_GAME_OBJECT_HPP
+    #include <hex/core/objects/GameObject.hpp>
+#endif /// !HEX_CORE_GAME_OBJECT_HPP
+
 #ifdef HEX_LOGGING // DEBUG
 
-// Include hex::core::cfg::debug
-#ifndef HEX_CORE_CFG_DEBUG_HPP
-    #include <hex/core/cfg/hex_debug.hpp>
-#endif /// !HEX_CORE_CFG_DEBUG_HPP
+    // Include hex::core::cfg::debug
+    #ifndef HEX_CORE_CFG_DEBUG_HPP
+        #include <hex/core/cfg/hex_debug.hpp>
+    #endif /// !HEX_CORE_CFG_DEBUG_HPP
 
-// Include hex::win::WinConsoleLogger
-#ifndef HEX_WIN_CONSOLE_LOGGER_HPP
-    #include <hex/windows/metrics/WinConsoleLogger.hpp>
-#endif /// !HEX_WIN_CONSOLE_LOGGER_HPP
+    // Include hex::win::WinConsoleLogger
+    #ifndef HEX_WIN_CONSOLE_LOGGER_HPP
+        #include <hex/windows/metrics/WinConsoleLogger.hpp>
+    #endif /// !HEX_WIN_CONSOLE_LOGGER_HPP
 
 #endif // DEBUG
 
