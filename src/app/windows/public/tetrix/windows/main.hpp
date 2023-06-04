@@ -62,6 +62,11 @@
     #include <hex/core/objects/GameObject.hpp>
 #endif /// !HEX_CORE_GAME_OBJECT_HPP
 
+// Include hex::win::WinAssets
+#ifndef HEX_WIN_ASSETS_HPP
+    #include <hex/windows/assets/WinAssets.hpp>
+#endif /// !HEX_WIN_ASSETS_HPP
+
 #ifdef HEX_LOGGING // DEBUG
 
     // Include hex::core::cfg::debug

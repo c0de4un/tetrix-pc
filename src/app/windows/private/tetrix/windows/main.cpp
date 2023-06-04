@@ -42,6 +42,8 @@ void Start()
 
         hexGLRenderer::Initialize();
 
+        hexWinAssets::Create();
+
         tetrixGame::Initialize();
 
         auto game(hexApp::getInstance());
@@ -91,6 +93,8 @@ void Stop()
     {
 
         hexApp::Terminate();
+
+        hexAssets::Terminate();
 
         hexRenderer::Terminate();
 
